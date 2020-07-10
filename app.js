@@ -42,9 +42,9 @@ const store = {
         'Rainbow',
         'Alliance',
         'Jolly Roger',
-        'Reaper’s Bones'
+        'Reapers Bones'
       ],
-      correctAnswer: 'Reaper’s Bones'
+      correctAnswer: 'Reapers Bones'
     },
     {
       question: 'Which shanty unlocks the secret entrance to Athena’s Fortune Hideout?',
@@ -96,26 +96,25 @@ function startQuizTemplate () {
   </main>`;
 }
 
-function questionTemplate(questionNumber, score) {
+function questionTemplate(questionNumber) {
   return `<header class="item">
   <h1>Sea of Thieves Trivia</h1>
   </header>
   <main>
     <div class="container">
         <div class="score">
-          <p>${questionNumber} out of 5</p>
-          <p>${score} correct, ${score-questionNumber} incorrect</p>
+          <p>${questionNumber+1} out of 5</p>
+          <p>${store.score} correct, ${store.questionNumber-store.score} incorrect</p>
         </div>
       <div class="item">
         <div class="js-question">
           <h1>${store.questions[questionNumber].question}</h1>
         </div>
         <form id="js-answer">
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
-          <button type="submit">Check Question</button>
+          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
         </form>
       </div>
     </div>
@@ -123,9 +122,6 @@ function questionTemplate(questionNumber, score) {
 }
 
 function feedbackTemplate(questionNumber, isCorrect) {
-  if(isCorrect) {
-    store.score++;
-  }
   return `<header class="item">
     <div class="feedback">
         <h1>${isCorrect ? 'Correct Answer!' : 'The correct answer is: '+ store.questions[questionNumber].correctAnswer}</h1>
@@ -136,7 +132,7 @@ function feedbackTemplate(questionNumber, isCorrect) {
         <h2>- Score -</h2>
         <div class="score-feedback">
             <p>Right: ${store.score} </p>
-            <p>Wrong: ${store.questionNumber-store.score}</p>
+            <p>Wrong: ${store.questionNumber-store.score+1}</p>
         </div>
         <div class="js-feedback-button">
             <button type="button">Next Question</button>
@@ -192,9 +188,15 @@ function handleNewGame() {
 function handleSubmitAnswer() {
   $('body').on('click', '#js-answer', event => {
     event.preventDefault();
-    let userAnswer= $(event.target).attr('value');
+    let userAnswer= $(event.currentTarget).attr('value'); 
+    if(userAnswer === store.questions[store.questionNumber].correctAnswer) {
+      store.score = store.score + 1;
+    }
     render(feedbackTemplate(store.questionNumber, userAnswer === store.questions[store.questionNumber].correctAnswer));
   }); 
+
+ 
+
 }
 
 function handleNextQuestion() {

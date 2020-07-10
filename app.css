@@ -7,10 +7,16 @@
   *
 */
 
+html {
+  height: 100%;
+}
+
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .imgwrap {
@@ -37,7 +43,7 @@
 }
 
 .title h1 {
-  font-size: 50px;
+  font-size: 40px;
   font-family: "Pirata One";
 }
 
@@ -50,6 +56,13 @@
   font-size: 20px;
 }
 
+.thing p {
+  font-size: 25px;
+  color: darkslategray;
+  font-family: "Pirata One";
+  text-align: center;
+
+}
 
 .bkground-img {
   background-color: black;
@@ -72,7 +85,7 @@ header.item {
 
 .js-question h1 {
   font-family: "Pirata One";
-  font-size: 36px;
+  font-size: 30px;
   text-align: center;
   color:antiquewhite;
 }
@@ -88,8 +101,16 @@ form label,form p {
 form input[type="radio"] {
   font-size: 16px;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
+label {
+  color: antiquewhite;
+}
+
+.js-start-button {
+  font-size: 30px;
+}
 
 form button{
   font-size: 25px;
@@ -111,11 +132,15 @@ button {
   font-family: "Pirata One";
 }
 
-.feedback-button {
+.js-feedback-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
+}
+
+.js-feedback-button button {
+  font-size: 20px;
 }
 
 .score {
@@ -150,7 +175,7 @@ button {
   display:flex;
   flex-direction: column;
   background-color: rgba(169,169,169,.4);
-  margin: 0 auto 120px auto;
+  margin: 0 auto 0 auto;
   width: 70%;
   border-radius: 20px;
   padding-bottom: 25px;
@@ -189,30 +214,20 @@ button {
   text-align: center;
 }
 
-.thing p {
-  font-size: 30px;
-  color: darkslategray;
-  font-family: "Pirata One";
-  text-align: center;
-
-}
 
 .feedback h1 {
   font-size: 50px;
 }
 
-.feedback-button button {
-  font-size: 20px;
-}
 
-.restart-button {
+.js-restart-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.restart-button button {
+.js-restart-button button {
   font-size: 20px;
 }
 
@@ -246,11 +261,12 @@ button {
 
   header  {
     padding: 2px 0 2px 0;
-    margin: 120px auto 200px auto;;
+    margin: 40px auto 60px auto;
   }
 
   .title h1 {
-    font-size: 88px;
+    font-size: 70px;
+    margin-bottom: 0;
   }
 
   .score p {
@@ -266,9 +282,8 @@ button {
   }
 
   form input[type="radio"]+label{
-    font-size: 22px;
+    font-size: 30px;
     display: inline;
-    color:#000;
   }
 
   button {
@@ -289,7 +304,7 @@ button {
     color: antiquewhite;
   }
 
-  .feedback-button button {
+  .js-feedback-button button {
     font-size: 40px;
   }
 
@@ -311,7 +326,14 @@ button {
     font-size: 64px;
   }
 
-  .restart-button button {
+  .js-restart-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+  .js-restart-button button {
     font-size: 40px;
   }
 

@@ -81,7 +81,7 @@ function startQuizTemplate () {
   return `<header>
   <div class="box"> 
       <div class="imgwrap">
-          <img src="/images/SOT-logo.png" alt="Sea of Thieves Logo"/> 
+          <img src="/images/SOT-logo.png" alt="Sea of Thieves Logo"> 
       </div>
   </div>
   </header>

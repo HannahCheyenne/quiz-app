@@ -111,10 +111,10 @@ function questionTemplate(questionNumber) {
           <h1>${store.questions[questionNumber].question}</h1>
         </div>
         <form id="js-answer">
-          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[store.questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
+          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
         </form>
       </div>
     </div>
@@ -188,7 +188,8 @@ function handleNewGame() {
 function handleSubmitAnswer() {
   $('body').on('click', '#js-answer', event => {
     event.preventDefault();
-    let userAnswer= $(event.currentTarget).attr('value'); 
+    let userAnswer= $(event.target).attr('value'); 
+    console.log(userAnswer);
     if(userAnswer === store.questions[store.questionNumber].correctAnswer) {
       store.score = store.score + 1;
     }

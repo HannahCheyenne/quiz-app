@@ -184,7 +184,7 @@ function eventHandler() {
 
 function handleNewGame() {
   $('body').on('click', '.js-start-button', () => {
-    render(startQuizTemplate(store.questionNumber));
+    render(questionTemplate(store.questionNumber));
     store.quizStarted = true;
   });
 }

@@ -5,24 +5,54 @@ const store = {
   // 5 or more questions are required
   questions: [
     {
-      question: 'What color is broccoli?',
+      question: 'What is the name of the Pirate Lord?',
       answers: [
-        'red',
-        'orange',
-        'pink',
-        'green'
+        'Ramsey Singh',
+        'Bad Deal Lindsey',
+        'Captain Blake',
+        'Captain Adara'
       ],
-      correctAnswer: 'green'
+      correctAnswer: 'Ramsey Singh'
     },
     {
-      question: 'What is the current year?',
+      question: 'Which color Megalodon has the famous nickname “Shrouded Ghost”?',
       answers: [
-        '1970',
-        '2015',
-        '2019',
-        '2005'
+        'Blue',
+        'Green/Yellow',
+        'White',
+        'Purple'
       ],
-      correctAnswer: '2019'
+      correctAnswer: 'White'
+    },
+    {
+      question: 'Which flag at level 5 lets you see other ships flying emissary flags on the entire map?',
+      answers: [
+        'Rainbow',
+        'Alliance',
+        'Jolly Roger',
+        'Reaper’s Bones'
+      ],
+      correctAnswer: 'Reaper’s Bones'
+    },
+    {
+      question: 'Which shanty unlocks the secret entrance to Athena’s Fortune Hideout?',
+      answers: [
+        'Oh Hail, the Pirate Lord',
+        'We Shall Sail Together',
+        'Becalmed',
+        'Ride of the Valkyries'
+      ],
+      correctAnswer: 'We Shall Sail Together'
+    },
+    {
+      question: 'Which instrument is not in the game?',
+      answers: [
+        'Concertina',
+        'Hurdy-gurdy',
+        'Fiddle',
+        'All of the above'
+      ],
+      correctAnswer: 'Fiddle'
     }
   ],
   quizStarted: false,

@@ -91,7 +91,7 @@ function startQuizTemplate () {
     </div>
     <div class="thing">
         <p>This is a fun quiz game using the lore from the videogame Sea of Thieves, test yerrr knowledge!</p>
-        <button type="button">Start Quiz</button>
+        <button class="js-start-button">Start Quiz</button>
     </div>
   </main>`;
 }
@@ -183,7 +183,7 @@ function eventHandler() {
 }
 
 function handleNewGame() {
-  $('body').on('click', '.js-restart-button', () => {
+  $('body').on('click', '.js-start-button', () => {
     render(startQuizTemplate(store.questionNumber));
     store.quizStarted = true;
   });

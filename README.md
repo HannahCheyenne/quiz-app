@@ -1,4 +1,4 @@
-### Boilerplate app structure for Quiz App project
+### Quiz app project
 
 Nicholas Snyder
 Hannah Hart

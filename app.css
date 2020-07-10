@@ -6,17 +6,18 @@
   * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
   *
 */
+
 .box {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
+
 .imgwrap {
   width: 50%;
   margin: auto;
-
 }
+
 .imgwrap img {
   display: block;
   width: 100%;
@@ -24,7 +25,6 @@
   height: auto;
   margin: auto;
 }
-
 
 .color {
   background-color: black;
@@ -35,9 +35,12 @@
   color: darkslategray;
   text-align: center;
 }
+
 .title h1 {
   font-size: 50px;
+  font-family: "Pirata One";
 }
+
 .thing {
   display: flex;
   flex-direction: column;
@@ -53,7 +56,6 @@
   background-image: url("images/SOT-skull.jpg");
   background-position: center;
   position: relative;
-
 }
 
 header.item {
@@ -68,7 +70,7 @@ header.item {
   color: rgb(77, 191, 154);
 }
 
- .js-question h1 {
+.js-question h1 {
   font-family: "Pirata One";
   font-size: 36px;
   text-align: center;
@@ -81,8 +83,6 @@ form label,form p {
   font-size: 18px;
   font-family: "Pirata One";
   display: inline;
-  
-
 }
 
 form input[type="radio"] {
@@ -99,6 +99,7 @@ form button{
   color: darkslategray;
   font-family: "Pirata One";
 }
+
 button {
   box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 50px;
@@ -108,6 +109,13 @@ button {
   padding: 10px 28px;
   margin-top: 40px;
   font-family: "Pirata One";
+}
+
+.feedback-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .score {
@@ -123,6 +131,21 @@ button {
   color: antiquewhite;
   font-family: "Pirata One";
 }
+
+.score-feedback {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.score-feedback p {
+  font-size: 20px;
+  color: antiquewhite;
+  font-family: "Pirata One";
+}
+
 .main {
   display:flex;
   flex-direction: column;
@@ -132,6 +155,7 @@ button {
   border-radius: 20px;
   padding-bottom: 25px;
 }
+
 .container {
   display:flex;
   flex-direction: column;
@@ -139,8 +163,16 @@ button {
   margin: 0 auto 120px auto;
   width: 70%;
   border-radius: 20px;
-  
 }
+
+
+.container h2 {
+  font-size: 25px;
+  text-align: center;
+  font-family: "Pirata One";
+  color: darkslategray;
+}
+
 
 .item {
   display: flex;
@@ -165,6 +197,46 @@ button {
 
 }
 
+.feedback h1 {
+  font-size: 50px;
+}
+
+.feedback-button button {
+  font-size: 20px;
+}
+
+.restart-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.restart-button button {
+  font-size: 20px;
+}
+
+.score-final {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.score-final p {
+  font-size: 20px;
+  color: antiquewhite;
+  font-family: "Pirata One";
+}
+
+.restart h1 {
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 50px;
+}
+
+
 @media all and (min-width: 1000px) {
 
   .bkground-img {
@@ -180,7 +252,6 @@ button {
   .title h1 {
     font-size: 88px;
   }
-
 
   .score p {
     font-size: 25px;
@@ -210,10 +281,59 @@ button {
     margin-top: 40px;
     font-family: "Pirata One";
   }
+
+  .container h2 {
+    font-size: 40px;
+    text-align: center;
+    font-family: "Pirata One";
+    color: antiquewhite;
+  }
+
+  .feedback-button button {
+    font-size: 40px;
+  }
+
+  .score-feedback {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .score-feedback p {
+    font-size: 30px;
+    color: antiquewhite;
+    font-family: "Pirata One";
+  }
+
+  .feedback h1 {
+    font-size: 64px;
+  }
+
+  .restart-button button {
+    font-size: 40px;
+  }
+
+  .score-final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .score-final p {
+    font-size: 30px;
+    color: antiquewhite;
+    font-family: "Pirata One";
+  }
+
+  .restart h1 {
+    font-size: 64px;
+  }
   
 }
-
-
 
 
 

@@ -111,10 +111,14 @@ function questionTemplate(questionNumber) {
           <h1>${store.questions[questionNumber].question}</h1>
         </div>
         <form id="js-answer">
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
+          <input id='${store.questions[questionNumber].answers[0]}' type='radio' name='answer' value='${store.questions[questionNumber].answers[0]}'/>
+          <label for='${store.questions[questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
+          <input id='${store.questions[questionNumber].answers[1]}' type='radio' name='answer' value='${store.questions[questionNumber].answers[1]}'/>
+          <label for='${store.questions[questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
+          <input id='${store.questions[questionNumber].answers[2]}' type='radio' name='answer' value='${store.questions[questionNumber].answers[2]}'/>
+          <label for='${store.questions[questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
+          <input id='${store.questions[questionNumber].answers[3]}' type='radio' name='answer' value='${store.questions[questionNumber].answers[3]}'/>
+          <label for='${store.questions[questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
         </form>
       </div>
     </div>

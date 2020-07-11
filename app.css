@@ -7,10 +7,33 @@
   *
 */
 
+/* BASIC ATTRIBUTES */
 html {
   height: 100%;
 }
+.color {
+  background-color: black;
+}
+.bkground-img {
+  background-color: black;
+  background-image: url("images/SOT-skull.jpg");
+  background-position: center;
+  position: relative;
+}
+.main {
+  display:flex;
+  flex-direction: column;
+  background-color: rgba(169,169,169,.4);
+  margin: 60px auto 30px auto;
+  width: 70%;
+  border-radius: 20px;
+  padding-bottom: 25px;
+}
 
+
+
+
+/* START QUIZ */
 .box {
   display: flex;
   align-items: center;
@@ -18,12 +41,10 @@ html {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .imgwrap {
   width: 50%;
   margin: auto;
 }
-
 .imgwrap img {
   display: block;
   width: 100%;
@@ -31,22 +52,15 @@ html {
   height: auto;
   margin: auto;
 }
-
-.color {
-  background-color: black;
-}
-
 .title {
   margin-bottom: 0;
   color: darkslategray;
   text-align: center;
 }
-
 .title h1 {
   font-size: 40px;
   font-family: "Pirata One";
 }
-
 .thing {
   display: flex;
   flex-direction: column;
@@ -55,22 +69,28 @@ html {
   align-items: center;
   font-size: 20px;
 }
-
 .thing p {
   font-size: 25px;
-  color: darkslategray;
+  color: antiquewhite;
   font-family: "Pirata One";
   text-align: center;
-
+}
+.js-start-button {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50px;
+  font-size: 30px;
+  color: darkslategray;
+  background-color: rgba(77, 191, 154);
+  padding: 10px 28px;
+  margin-top: 40px;
+  font-family: "Pirata One";
 }
 
-.bkground-img {
-  background-color: black;
-  background-image: url("images/SOT-skull.jpg");
-  background-position: center;
-  position: relative;
-}
 
+
+
+
+/*  QUIZ QUESTION PAGES  */
 header.item {
   width: 70%;
   margin: 60px auto 80px auto;
@@ -78,40 +98,34 @@ header.item {
   border-radius: 20px;
   padding: 2px 0 2px 0;
   font-family: "Pirata One";
-  font-size: 36px;
+  font-size: 25px;
   text-align: center;
   color: rgb(77, 191, 154);
 }
-
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+.score p {
+  margin-bottom: 2px;
+  font-size: 20px;
+  color: antiquewhite;
+  font-family: "Pirata One";
+}
+.js-question {
+  margin-bottom: 15px;
+}
 .js-question h1 {
   font-family: "Pirata One";
-  font-size: 30px;
+  font-size: 24px;
   text-align: center;
   color:antiquewhite;
 }
-
-
-form label,form p {
-  display: block;
-  font-size: 18px;
-  font-family: "Pirata One";
-  display: inline;
-}
-
-form input[type="radio"] {
-  font-size: 16px;
-  margin-bottom: 20px;
-  margin-right: 10px;
-}
-
-label {
-  color: antiquewhite;
-}
-
-.js-start-button {
-  font-size: 30px;
-}
-
+/* DELETED BUTTON
 form button{
   font-size: 25px;
   padding: 10px 16px;
@@ -120,67 +134,33 @@ form button{
   color: darkslategray;
   font-family: "Pirata One";
 }
+*/
 
-button {
-  box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 50px;
-  font-size: 35px;
-  color: darkslategray;
-  background-color: rgba(77, 191, 154);
-  padding: 10px 28px;
-  margin-top: 40px;
+
+
+
+/*  FORM ATTRIBUTES  */
+form label {
+  display: block;
+  font-size: 18px;
   font-family: "Pirata One";
+  display: inline;
+  color: antiquewhite;
 }
-
-.js-feedback-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+form input[type="radio"] {
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
-.js-feedback-button button {
-  font-size: 20px;
-}
 
-.score {
+/*  FEEDBACK PAGE  */
+.item {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.score p {
-  font-size: 20px;
-  color: antiquewhite;
-  font-family: "Pirata One";
-}
-
-.score-feedback {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.score-feedback p {
-  font-size: 20px;
-  color: antiquewhite;
-  font-family: "Pirata One";
-}
-
-.main {
-  display:flex;
   flex-direction: column;
-  background-color: rgba(169,169,169,.4);
-  margin: 0 auto 0 auto;
-  width: 70%;
-  border-radius: 20px;
-  padding-bottom: 25px;
+  justify-content: center;
+  padding: 20px 30px 30px 20px;
+  align-items: center;
 }
-
 .container {
   display:flex;
   flex-direction: column;
@@ -189,48 +169,49 @@ button {
   width: 70%;
   border-radius: 20px;
 }
-
-
 .container h2 {
   font-size: 25px;
   text-align: center;
   font-family: "Pirata One";
   color: darkslategray;
 }
-
-
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 20px 30px 30px 20px;
-  align-items: center;
-}
-
-.js-question {
-  color: grey;
-  font-size: 16px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-
 .feedback h1 {
-  font-size: 50px;
+  font-size: 40px;
 }
-
-
-.js-restart-button {
+.score-feedback {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.score-feedback p {
+  font-size: 20px;
+  color: antiquewhite;
+  font-family: "Pirata One";
+}
+.js-feedback-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 20px;
 }
-
-.js-restart-button button {
+.js-feedback-button button {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50px;
   font-size: 20px;
+  color: darkslategray;
+  background-color: rgba(77, 191, 154);
+  padding: 10px 28px;
+  margin-top: 40px;
+  font-family: "Pirata One";
 }
 
+
+/*  FINAL RESULTS PAGE  */
+.restart h1 {
+  font-size: 40px;
+}
 .score-final {
   display: flex;
   flex-direction: row;
@@ -238,76 +219,163 @@ button {
   padding-left: 30px;
   padding-right: 30px;
 }
-
 .score-final p {
   font-size: 20px;
   color: antiquewhite;
   font-family: "Pirata One";
 }
-
-.restart h1 {
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 50px;
+.js-restart-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.js-restart-button button {
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50px;
+  font-size: 20px;
+  color: darkslategray;
+  background-color: rgba(77, 191, 154);
+  padding: 10px 28px;
+  margin-top: 40px;
+  font-family: "Pirata One";
 }
 
 
-@media all and (min-width: 1000px) {
 
+@media all and (min-width: 400px) and (max-width: 1000px) {
+  /*  START PAGE  */
+  .title h1 {
+    font-size: 60px;
+  }
+  .js-start-button {
+    font-size: 40px;
+  }
+
+
+  /*  QUESTION PAGE  */
+  header.item {
+    font-size: 30px;
+  }
+  .score {
+    flex-direction: row;
+    justify-content: space-between;
+  } 
+  .js-question h1 {
+    font-size: 30px;
+  }
+  form label {
+    font-size: 23px;
+  }
+ 
+
+
+
+  /*  FEEDBACK PAGE  */
+  .container h2 {
+    font-size: 40px;
+  }
+  .feedback h1 {
+    font-size: 50px;
+  }
+  .score-feedback {
+    justify-content: space-evenly;
+  }
+  .score-feedback p {
+    font-size: 25px;
+  }
+  .js-feedback-button button {
+    font-size: 35px;
+  }
+
+
+  /*  RESULTS PAGE  */
+  .restart h1 {
+    font-size: 50px;
+  }
+  .score-final {
+    justify-content: space-evenly;
+  }
+  .score-final p {
+    font-size: 30px;
+  }
+  .js-restart-button button {
+    font-size: 35px;
+  }
+}
+
+
+
+@media all and (min-width: 1000px) {
+  /*  BASIC ELEMENTS  */
   .bkground-img {
     background-image: url("images/SOT-ships.jpg");
     background-repeat: no-repeat;
   }
-
   header  {
     padding: 2px 0 2px 0;
-    margin: 40px auto 60px auto;
+    margin: 20px auto 60px auto;
   }
+  
 
+
+  /*  START PAGE  */
   .title h1 {
     font-size: 70px;
     margin-bottom: 0;
   }
-
-  .score p {
-    font-size: 25px;
-    color: darkslategray;
-    font-family: "Pirata One";
-  }
-
-  .js-question h1 {
-    font-size: 40px;
-    color: darkslategray;
-    font-family: 'Pirata One';
-  }
-
-  form input[type="radio"]+label{
+  .thing p {
     font-size: 30px;
-    display: inline;
-  }
-
-  button {
-    box-shadow:0 8px 16px 0 rgba(0,0,0,0.24),0 6px 20px 0 rgba(0,0,0,0.19);
-    border-radius: 50px;
-    font-size: 60px;
     color: darkslategray;
-    background-color: rgba(77, 191, 154);
-    padding: 10px 28px;
-    margin-top: 40px;
-    font-family: "Pirata One";
+  }
+  .js-start-button {
+    font-size: 50px;
   }
 
+
+ 
+  /*  QUESTION PAGE  */
+  header.item h1 {
+    font-size: 70px;
+  }
   .container h2 {
     font-size: 40px;
     text-align: center;
     font-family: "Pirata One";
     color: antiquewhite;
   }
-
-  .js-feedback-button button {
+  .score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+  }
+  .score p {
+    font-size: 25px;
+    font-family: "Pirata One";
+  }
+  .js-question h1 {
     font-size: 40px;
+    color: darkslategray;
+    font-family: 'Pirata One';
+  }
+  form input[type="radio"]+label{
+    font-size: 30px;
+    display: inline;
+  }
+  form label {
+    font-size: 30px;
+    color: darkslategray;
   }
 
+
+
+  /*  FEEDBACK PAGE  */
+ .feedback h1 {
+    font-size: 64px;
+  }
   .score-feedback {
     display: flex;
     flex-direction: row;
@@ -315,28 +383,22 @@ button {
     padding-left: 30px;
     padding-right: 30px;
   }
-  
   .score-feedback p {
     font-size: 30px;
     color: antiquewhite;
     font-family: "Pirata One";
   }
+  .js-feedback-button button {
+    font-size: 50px;
+  }
+ 
 
-  .feedback h1 {
+
+
+  /*  RESULTS PAGE  */
+  .restart h1 {
     font-size: 64px;
   }
-
-  .js-restart-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-  .js-restart-button button {
-    font-size: 40px;
-  }
-
   .score-final {
     display: flex;
     flex-direction: row;
@@ -344,17 +406,20 @@ button {
     padding-left: 30px;
     padding-right: 30px;
   }
-
   .score-final p {
     font-size: 30px;
     color: antiquewhite;
     font-family: "Pirata One";
   }
-
-  .restart h1 {
-    font-size: 64px;
+  .js-restart-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
   }
-  
+  .js-restart-button button {
+    font-size: 40px;
+  }
 }
 
 

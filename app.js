@@ -188,8 +188,7 @@ function handleNewGame() {
 function handleSubmitAnswer() {
   $('body').on('click', '#js-answer', event => {
     event.preventDefault();
-    let userAnswer= $(event.target).val(); 
-    console.log(userAnswer);
+    let userAnswer= $(event.target).val();
     if(userAnswer === store.questions[store.questionNumber].correctAnswer) {
       store.score = store.score + 1;
     }

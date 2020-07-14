@@ -110,12 +110,27 @@ function questionTemplate(questionNumber) {
         <div class="js-question">
           <h1>${store.questions[questionNumber].question}</h1>
         </div>
-        <form id="js-answer">
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[0]}'>${store.questions[questionNumber].answers[0]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[1]}'>${store.questions[questionNumber].answers[1]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[2]}'>${store.questions[questionNumber].answers[2]}</label><br>
-          <label><input type='radio' name='answer' value='${store.questions[questionNumber].answers[3]}'>${store.questions[questionNumber].answers[3]}</label><br>
-        </form>
+        <div class="js-answer">
+          <div class="answer-wrapper">
+            <input id="answer1" type="radio" name="answer" value="${store.questions[questionNumber].answers[0]}"/>
+            <label for="answer1">${store.questions[questionNumber].answers[0]}</label>
+          </div>
+          <div class="answer-wrapper">
+            <input id="answer2" type="radio" name="answer" value="${store.questions[questionNumber].answers[1]}"/>
+            <label for="answer2">${store.questions[questionNumber].answers[1]}</label>
+          </div>
+          <div class="answer-wrapper">
+            <input id="answer3" type="radio" name="answer" value="${store.questions[questionNumber].answers[2]}"/>
+            <label for="answer3">${store.questions[questionNumber].answers[2]}</label>
+          </div>
+          <div class="answer-wrapper">
+            <input id="answer4" type="radio" name="answer" value="${store.questions[questionNumber].answers[3]}"/>
+            <label for="answer4">${store.questions[questionNumber].answers[3]}</label>
+          </div>
+        </div>
+        <div class="js-check-button">
+          <button type="button">Check Question</button>
+    </div>
       </div>
     </div>
   </main>`;
@@ -186,17 +201,15 @@ function handleNewGame() {
 }
 
 function handleSubmitAnswer() {
-  $('body').on('click', '#js-answer', event => {
+  $('body').on('click','.js-check-button', () => {
     event.preventDefault();
-    let userAnswer= $(event.target).val();
-    if(userAnswer === store.questions[store.questionNumber].correctAnswer) {
+    let userAnswer = $("input[name='answer']:checked").val();
+    let isCorrect = (userAnswer === store.questions[store.questionNumber].correctAnswer);
+    if(isCorrect) {
       store.score = store.score + 1;
     }
-    render(feedbackTemplate(store.questionNumber, userAnswer === store.questions[store.questionNumber].correctAnswer));
-  }); 
-
- 
-
+    render(feedbackTemplate(store.questionNumber, isCorrect));
+  });
 }
 
 function handleNextQuestion() {

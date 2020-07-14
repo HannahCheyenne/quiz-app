@@ -23,7 +23,7 @@ html {
 .main {
   display:flex;
   flex-direction: column;
-  background-color: rgba(169,169,169,.4);
+  background-color: rgba(169,169,169,.6);
   margin: 60px auto 30px auto;
   width: 70%;
   border-radius: 20px;
@@ -94,7 +94,7 @@ html {
 header.item {
   width: 70%;
   margin: 60px auto 80px auto;
-  background-color: rgba(169, 169, 169, .4);
+  background-color: rgba(169, 169, 169, .7);
   border-radius: 20px;
   padding: 2px 0 2px 0;
   font-family: "Pirata One";
@@ -125,31 +125,35 @@ header.item {
   text-align: center;
   color:antiquewhite;
 }
-/* DELETED BUTTON
-form button{
+.js-check-button button{
+  margin-top: 20px;
   font-size: 25px;
   padding: 10px 16px;
   border-radius: 50px;
-  background-color: antiquewhite;
+  background-color: rgb(77, 191, 154);
   color: darkslategray;
   font-family: "Pirata One";
 }
-*/
 
 
 
 
 /*  FORM ATTRIBUTES  */
-form label {
+.js-answer label {
   display: block;
   font-size: 18px;
   font-family: "Pirata One";
   display: inline;
   color: antiquewhite;
 }
-form input[type="radio"] {
+.js-answer input[type="radio"] {
   margin-bottom: 20px;
   margin-right: 10px;
+}
+input[type='radio'] + label{
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 
@@ -164,7 +168,7 @@ form input[type="radio"] {
 .container {
   display:flex;
   flex-direction: column;
-  background-color: rgba(77, 191, 154,.4);
+  background-color: rgba(77, 191, 154,.8);
   margin: 0 auto 120px auto;
   width: 70%;
   border-radius: 20px;
@@ -243,7 +247,7 @@ form input[type="radio"] {
 
 
 
-@media all and (min-width: 400px) and (max-width: 1000px) {
+@media all and (min-width: 400px) {
   /*  START PAGE  */
   .title h1 {
     font-size: 60px;
@@ -264,11 +268,10 @@ form input[type="radio"] {
   .js-question h1 {
     font-size: 30px;
   }
-  form label {
+  .js-answer label {
     font-size: 23px;
   }
  
-
 
 
   /*  FEEDBACK PAGE  */
@@ -361,11 +364,11 @@ form input[type="radio"] {
     color: darkslategray;
     font-family: 'Pirata One';
   }
-  form input[type="radio"]+label{
+  .js-answer input[type="radio"]+label{
     font-size: 30px;
     display: inline;
   }
-  form label {
+  .js-answer label {
     font-size: 30px;
     color: darkslategray;
   }

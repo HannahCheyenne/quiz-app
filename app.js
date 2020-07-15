@@ -78,14 +78,12 @@ const store = {
 // These functions return HTML templates
 
 function startQuizTemplate () {
-  return `<header>
-  <div class="box"> 
+  return [`<div class="box"> 
       <div class="imgwrap">
           <img src="./images/SOT-logo.png" alt="Sea of Thieves Logo"> 
       </div>
-  </div>
-  </header>
-  <main class="main">
+  </div>`,
+  `<div class="main">
     <div class="title">
         <h1>Sea of Thieves Trivia</h1>
     </div>
@@ -93,94 +91,90 @@ function startQuizTemplate () {
         <p>This is a fun quiz game using the lore from the videogame Sea of Thieves, test yerrr knowledge!</p>
         <button class="js-start-button">Start Quiz</button>
     </div>
-  </main>`;
+  </div>`];
 }
 
 function questionTemplate(questionNumber) {
-  return `<header class="item">
+  return [`<div class="item">
   <h1>Sea of Thieves Trivia</h1>
-  </header>
-  <main>
-    <div class="container">
-        <div class="score">
-          <p>${questionNumber+1} out of 5</p>
-          <p>${store.score} correct, ${store.questionNumber-store.score} incorrect</p>
+  </div>`,
+  `<div class="container">
+    <div class="score">
+      <p>${questionNumber+1} out of 5</p>
+      <p>${store.score} correct, ${store.questionNumber-store.score} incorrect</p>
+    </div>
+    <div class="item">
+      <div class="js-question">
+        <h1>${store.questions[questionNumber].question}</h1>
+      </div>
+      <form id="js-answer">
+        <div class="answer-wrapper">
+          <input id="answer1" type="radio" name="answer" value="${store.questions[questionNumber].answers[0]}" required>
+          <label for="answer1">${store.questions[questionNumber].answers[0]}</label>
         </div>
-      <div class="item">
-        <div class="js-question">
-          <h1>${store.questions[questionNumber].question}</h1>
+        <div class="answer-wrapper">
+          <input id="answer2" type="radio" name="answer" value="${store.questions[questionNumber].answers[1]}" >
+          <label for="answer2">${store.questions[questionNumber].answers[1]}</label>
         </div>
-        <div class="js-answer">
-          <div class="answer-wrapper">
-            <input id="answer1" type="radio" name="answer" value="${store.questions[questionNumber].answers[0]}"/>
-            <label for="answer1">${store.questions[questionNumber].answers[0]}</label>
-          </div>
-          <div class="answer-wrapper">
-            <input id="answer2" type="radio" name="answer" value="${store.questions[questionNumber].answers[1]}"/>
-            <label for="answer2">${store.questions[questionNumber].answers[1]}</label>
-          </div>
-          <div class="answer-wrapper">
-            <input id="answer3" type="radio" name="answer" value="${store.questions[questionNumber].answers[2]}"/>
-            <label for="answer3">${store.questions[questionNumber].answers[2]}</label>
-          </div>
-          <div class="answer-wrapper">
-            <input id="answer4" type="radio" name="answer" value="${store.questions[questionNumber].answers[3]}"/>
-            <label for="answer4">${store.questions[questionNumber].answers[3]}</label>
-          </div>
+        <div class="answer-wrapper">
+          <input id="answer3" type="radio" name="answer" value="${store.questions[questionNumber].answers[2]}" >
+          <label for="answer3">${store.questions[questionNumber].answers[2]}</label>
+        </div>    
+        <div class="answer-wrapper">
+          <input id="answer4" type="radio" name="answer" value="${store.questions[questionNumber].answers[3]}" >
+          <label for="answer4">${store.questions[questionNumber].answers[3]}</label>
         </div>
         <div class="js-check-button">
-          <button type="button">Check Question</button>
+          <button type="submit">Check Question</button>
+        </div>
+      </form>
     </div>
-      </div>
-    </div>
-  </main>`;
+  </div>`];
 }
 
 function feedbackTemplate(questionNumber, isCorrect) {
-  return `<header class="item">
+  return [`<div class="item2">
     <div class="feedback">
         <h1>${isCorrect ? 'Correct Answer!' : 'The correct answer is: '+ store.questions[questionNumber].correctAnswer}</h1>
     </div>
-  </header>
-  <main>
-    <div class="container">
-        <h2>- Score -</h2>
-        <div class="score-feedback">
-            <p>Right: ${store.score} </p>
-            <p>Wrong: ${store.questionNumber-store.score+1}</p>
-        </div>
-        <div class="js-feedback-button">
-            <button type="button">Next Question</button>
-        </div>
-    </div>
-  </main>`;
+  </div>`,
+  `<div class="container2">
+      <h2>- Score -</h2>
+      <div class="score-feedback">
+          <p>Right: ${store.score} </p>
+          <p>Wrong: ${store.questionNumber-store.score+1}</p>
+      </div>
+      <div class="js-feedback-button">
+          <button type="button">Next Question</button>
+      </div>
+  </div>`];
 }
 
 function finalScoreTemplate(){
-  return `<header class="item">
+  return [
+  `<div class="item2">
     <div class="restart">
         <h1>Your Results</h1>
     </div>
-  </header>
-  <main>
-    <div class="container">
-        <h2>- Score -</h2>
-        <div class="score-final">
-            <p>Right: ${store.score}</p>
-            <p>Wrong: ${store.questionNumber-store.score}</p>
-        </div>
-        <div class="js-restart-button">
-            <button type="button">Restart Quiz</button>
-        </div>
+  </div>`,
+  `<div class="container2">
+    <h2>- Score -</h2>
+    <div class="score-final">
+        <p>Right: ${store.score}</p>
+        <p>Wrong: ${store.questionNumber-store.score}</p>
     </div>
-  </main>`;
+    <div class="js-restart-button">
+        <button type="button">Restart Quiz</button>
+    </div>
+  </div>`];
 }
 
 /********** RENDER FUNCTION(S) **********/
 
 // This function conditionally replaces the contents of the <main> tag based on the state of the store
 function render(template) {
-  $('body').html(template);
+  $('header').html(template[0]);
+  $('main').html(template[1]);
 }
 
 /********** EVENT HANDLER FUNCTIONS **********/
@@ -201,14 +195,14 @@ function handleNewGame() {
 }
 
 function handleSubmitAnswer() {
-  $('body').on('click','.js-check-button', () => {
+  $('body').on('submit','#js-answer', () => {
     event.preventDefault();
     let userAnswer = $("input[name='answer']:checked").val();
     let isCorrect = (userAnswer === store.questions[store.questionNumber].correctAnswer);
     if(isCorrect) {
       store.score = store.score + 1;
     }
-    render(feedbackTemplate(store.questionNumber, isCorrect));
+      render(feedbackTemplate(store.questionNumber, isCorrect));
   });
 }
 
